@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TBD Talk Title: Session 6</title>
+<style>button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-block}progress,sub,sup{vertical-align:baseline}html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0} menu,article,aside,details,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{}button,select{text-transform:none}[type=submit], [type=reset],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}
+</style>
+<style>pre,
+code {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+pre {
+  padding: 0.5rem;
+  line-height: 1.25;
+  overflow-x: scroll;
+}
+pre,
+code {
+  background-color: #fafafa;
+}
+
+a,
+a:visited {
+  color: #3498db;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #2980b9;
+}
+
+html {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 48rem) {
+  html {
+    font-size: 15px;
+  }
+}
+
+body {
+  line-height: 1.85;
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: 1.3em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+  line-height: 1.42;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2.827em;
+}
+
+h2 {
+  font-size: 1.999em;
+}
+
+h3 {
+  font-size: 1.414em;
+}
+
+h4 {
+  font-size: 1.121em;
+}
+
+h5 {
+  font-size: 0.88em;
+}
+
+h6 {
+  font-size: 0.88em;
+}
+
+small {
+  font-size: 0.707em;
+}
+
+img,
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+  max-width: 100%;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open + Sans + Condensed:300,
+  300italic,
+  700);
+
+@import url(http://fonts.googleapis.com/css?family=Arimo:700, 700italic);
+
+html {
+  max-width: 100%;
+}
+
+body {
+  color: #444;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 300;
+  line-height: 1.45;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arimo, Helvetica, sans-serif;
+}
+
+h1 > a,
+h2 > a,
+h1 > a:visited,
+h2 > a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 > a:hover,
+h2 > a:hover,
+h1 > a:focus,
+h2 > a:focus {
+  color: #3498db;
+}
+
+h1 > a:hover::before,
+h2 > a:hover::before,
+h1 > a:focus::before,
+h2 > a:focus::before {
+  content: "# ";
+}
+
+h1,
+h2,
+h3 {
+  border-bottom: 2px solid #fafafa;
+  margin-bottom: 1.15em;
+  padding-bottom: 0.5em;
+  text-align: right;
+}
+
+blockquote {
+  border-left: 8px solid lightblue;
+  padding: 1em;
+}
+
+/* Slide effect, based on https://codepen.io/chriscoyier/pen/pMRgwW MIT licensed */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-y: hidden;
+  font-size: calc(1rem + 0.5vw);
+}
+.slider {
+  font-family: sans-serif;
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+  display: -webkit-box;
+  display: flex;
+  overflow-x: scroll;
+}
+section {
+  min-width: 100vw;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+}
+section > * {
+  margin: 1em auto;
+  max-width: 80vw;
+}
+h1 {
+  text-align: right;
+  font-size: calc(1rem + 3vw);
+}
+
+strong {
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<section>
+<h1 id="providing-robust%2C-progressively-enhanced%2C-richly-accessible-print-equation-layout-at-scale-on-the-web" tabindex="-1"><a class="header-anchor" href="#providing-robust%2C-progressively-enhanced%2C-richly-accessible-print-equation-layout-at-scale-on-the-web">Providing robust, progressively enhanced, richly accessible print equation layout at scale on the web</a></h1>
+<p><em>ATHEN STEM Accessibility Conference</em></p>
+<p>By Peter Krautzberger, <a href="https://krautzource.com">krautzource</a></p>
+<p style="margin-top:33vh; font-size: 0.8em">Scroll left/right to move through slides. Click headings to anchor the slide.</p>
+<section>
+<h2 id="overview" tabindex="-1"><a class="header-anchor" href="#overview">Overview</a></h2>
+<ol>
+<li><a href="#introduction">Introduction: Accessibility and the Web Platform</a></li>
+<li><a href="#understanding">Understanding Accessibility</a></li>
+<li><a href="#definining">Definining Accessibility</a></li>
+<li><a href="#evaluating">Evaluating Accessibility</a></li>
+<li><a href="#beyond">Beyond requirements</a></li>
+</ol>
+</section>
+<section id="introduction">
+<h2 id="1.-introduction" tabindex="-1"><a class="header-anchor" href="#1.-introduction">1. Introduction</a></h2>
+</section>
+</section>
+
+<script>
+const sl = document.querySelector('section');
+sl.classList.add('slider');
+const s = document.createElement('section');
+document.querySelectorAll('.slider > *:not(section)').forEach(n => s.appendChild(n));
+sl.insertAdjacentElement('afterbegin', s);
+</script>
+</body>
+</html>
