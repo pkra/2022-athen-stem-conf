@@ -22,3 +22,9 @@ Standard ARIA patterns provide a robust, user-friendly approach to accessible eq
 ## Key Point 3 - (Maximum 110 characters) 
 
 This approach works at large scale and provides paths towards further enhancements.
+
+## Bio
+
+Peter Krautzberger is a mathematician by training and working as an independent consultant and developer in Bonn, Germany, working primarily to help academic publishers improve their content conversion workflows for STEM content.
+
+After leaving research, Peter managed the MathJax Consortium from 2012 to 2017 and he currently leads the work on the HTML platform of the American Mathematical Society, including full text journal article and ebook production. Peter is also an invited expert on the W3C Accessible Rich Internet Applications Working Group (ARIA WG).
