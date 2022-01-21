@@ -5,10 +5,53 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TBD Talk Title: Session 6</title>
-<style>button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-block}progress,sub,sup{vertical-align:baseline}html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0} menu,article,aside,details,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{}button,select{text-transform:none}[type=submit], [type=reset],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}
-</style>
-<style>pre,
+<title>Enhancing server-side MathJax rendering with common ARIA patterns</title>
+<style>*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* end "reset" */
+
+strong {
+  font-weight: bold;
+}
+pre,
 code {
   font-family: Menlo, Monaco, "Courier New", monospace;
 }
@@ -35,17 +78,7 @@ a:active {
 }
 
 html {
-  font-size: 12px;
-}
-
-@media screen and (min-width: 48rem) {
-  html {
-    font-size: 15px;
-  }
-}
-
-body {
-  line-height: 1.85;
+  font-size: calc(1rem + 0.47vw);
 }
 
 p {
@@ -57,55 +90,33 @@ h1,
 h2,
 h3,
 h4 {
-  margin: 1.414em 0 0.5em;
+  margin-bottom: 0.5em;
   font-weight: inherit;
   line-height: 1.42;
 }
 
 h1 {
-  margin-top: 0;
-  font-size: 2.827em;
+  font-size: calc(1rem + 1vw);
 }
 
 h2 {
-  font-size: 1.999em;
+  font-size: calc(1.45rem + 1.29vw);
 }
 
-h3 {
-  font-size: 1.414em;
-}
-
-h4 {
-  font-size: 1.121em;
-}
-
-h5 {
-  font-size: 0.88em;
-}
-
+h3,
+h4,
+h5,
 h6 {
-  font-size: 0.88em;
+  font-size: 1rem;
 }
 
 small {
-  font-size: 0.707em;
+  font-size: 0.8em;
 }
 
-img,
-canvas,
-iframe,
-video,
-svg,
-select,
-textarea {
-  max-width: 100%;
-}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
 
-@import url(http://fonts.googleapis.com/css?family=Open + Sans + Condensed:300,
-  300italic,
-  700);
-
-@import url(http://fonts.googleapis.com/css?family=Arimo:700, 700italic);
+@import url(http://fonts.googleapis.com/css?family=Arimo:700,700italic);
 
 html {
   max-width: 100%;
@@ -160,19 +171,15 @@ h3 {
 
 blockquote {
   border-left: 8px solid lightblue;
-  padding: 1em;
+  padding-left: 1em;
 }
 
 /* Slide effect, based on https://codepen.io/chriscoyier/pen/pMRgwW MIT licensed */
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   overflow-y: hidden;
-  font-size: calc(1rem + 0.5vw);
 }
+
 .slider {
   font-family: sans-serif;
   -ms-scroll-snap-type: x mandatory;
@@ -181,44 +188,281 @@ body {
   display: flex;
   overflow-x: scroll;
 }
-section {
+.slider section {
   min-width: 100vw;
   min-height: 100vh;
   scroll-snap-align: start;
   position: relative;
 }
-section > * {
+.slider section > * {
   margin: 1em auto;
   max-width: 80vw;
 }
-h1 {
-  text-align: right;
-  font-size: calc(1rem + 3vw);
-}
 
-strong {
-  font-weight: bold;
-}
 </style>
 </head>
 <body>
 <section>
-<h1 id="providing-robust%2C-progressively-enhanced%2C-richly-accessible-print-equation-layout-at-scale-on-the-web" tabindex="-1"><a class="header-anchor" href="#providing-robust%2C-progressively-enhanced%2C-richly-accessible-print-equation-layout-at-scale-on-the-web">Providing robust, progressively enhanced, richly accessible print equation layout at scale on the web</a></h1>
+<h1 id="enhancing-server-side-mathjax-rendering-with-common-aria-patterns-to-provide-robust%2C-richly-accessible-equation-layout-at-scale" tabindex="-1"><a class="header-anchor" href="#enhancing-server-side-mathjax-rendering-with-common-aria-patterns-to-provide-robust%2C-richly-accessible-equation-layout-at-scale">Enhancing server-side MathJax rendering with common ARIA patterns to provide robust, richly accessible equation layout at scale</a></h1>
 <p><em>ATHEN STEM Accessibility Conference</em></p>
 <p>By Peter Krautzberger, <a href="https://krautzource.com">krautzource</a></p>
-<p style="margin-top:33vh; font-size: 0.8em">Scroll left/right to move through slides. Click headings to anchor the slide.</p>
+<p style="margin-top: 10%; font-size: 0.8em">Scroll left/right to move through slides. Click headings to anchor the slide.</p>
 <section>
 <h2 id="overview" tabindex="-1"><a class="header-anchor" href="#overview">Overview</a></h2>
 <ol>
-<li><a href="#introduction">Introduction: Accessibility and the Web Platform</a></li>
-<li><a href="#understanding">Understanding Accessibility</a></li>
-<li><a href="#definining">Definining Accessibility</a></li>
-<li><a href="#evaluating">Evaluating Accessibility</a></li>
-<li><a href="#beyond">Beyond requirements</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#restraints">Restraints</a></li>
 </ol>
 </section>
 <section id="introduction">
 <h2 id="1.-introduction" tabindex="-1"><a class="header-anchor" href="#1.-introduction">1. Introduction</a></h2>
+</section>
+<section>
+<h2 id="hi" tabindex="-1"><a class="header-anchor" href="#hi">Hi</a></h2>
+<ul>
+<li>Former mathematician</li>
+<li>Former Manager at the <a href="https://www.mathjax.org">MathJax</a> Consortium</li>
+<li>Independent developer and consultant, focus on STEM publishing conversion pipelines
+<ul>
+<li>e.g., at <a href="https://www.ams.org">AMS</a> ebook and <a href="https://www.ams.org/publications/journals/journalsframework/AMSMathViewer">journals</a> HTML production</li>
+</ul>
+</li>
+<li>Invited Expert at W3C</li>
+<li>co-editor of the ARIA Specification</li>
+</ul>
+</section>
+<section>
+<h2 id="%E2%80%9Cprint-equation-layout%E2%80%9D---a-framing-device" tabindex="-1"><a class="header-anchor" href="#%E2%80%9Cprint-equation-layout%E2%80%9D---a-framing-device">“Print equation layout” - a framing device</a></h2>
+<p><a href="https://en.wikipedia.org/wiki/Framing_(social_sciences)">From Wikipedia</a>:</p>
+<blockquote>
+<p>[…] framing comprises a set of concepts and theoretical perspectives on how individuals, groups, and societies organize, perceive, and communicate about reality.</p>
+</blockquote>
+<p>Examples of “print equation layout”:</p>
+<ul>
+<li>math mode TeX/LaTeX</li>
+<li>asciimath, groff/eqn</li>
+<li>MathML, OMML</li>
+<li>Mathematica traditionalForm, Maple 1-D/2-D Math</li>
+</ul>
+<p>(“Typical output” - you can frequently draw anything with these notations.)</p>
+<my-notes hidden>
+<p>What I call “print equation layout” most people just call “math layout”, “formula layout”, or just “math” (that last one is somewhat insulting, speaking as a former mathematician).</p>
+<p>This may seem unnnecessary and convoluted. To some degree, I agree.</p>
+<p>For example, I personally don’t believe we have seen “web equation layout” come into existence during these first 30 years of the web.</p>
+<p>But as a framing device it serves to ground the conversation and keep aspects in focus that I find critical to the discussion.
+</my-notes></p>
+</section>
+<section>
+<h2 id="what%E2%80%99s-the-problem-(1)" tabindex="-1"><a class="header-anchor" href="#what%E2%80%99s-the-problem-(1)">What’s the problem (1)</a></h2>
+<p>Print equation layout is …</p>
+<ul>
+<li>an elaborate, two-dimensional form of abbreviated notation for highly complex, context dependent abstract thought.
+<ul>
+<li>even at an elementary level (e.g., long division).</li>
+</ul>
+</li>
+<li>highly ambiguous (examples: <a href="https://whystartat.xyz/wiki/Category:Ambiguities">whystartat.xyz</a>)</li>
+<li>often integrated into additional complex notation (e.g., text annotation, graphical documents).</li>
+<li>“non-text content” (so <a href="https://w3c.github.io/wcag/21/guidelines/#non-text-content">WCAG 1.1.1</a> applies).</li>
+</ul>
+<my-notes hidden>
+* 2d abbreviation: just because it uses text glyphs does not make it text (cf. ascii art).
+* non-text: 
+  * TeX text vs math mode, or "formula blocks" in MS Word et al).
+* e.g., spacing used to infer semantics
+* e.g., invisible/implied characters
+</my-notes>
+</section>
+<section>
+<h2 id="what%E2%80%99s-the-problem-(2)" tabindex="-1"><a class="header-anchor" href="#what%E2%80%99s-the-problem-(2)">What’s the problem (2)</a></h2>
+<p>Print equation layout …</p>
+<ul>
+<li>has (print) accessibility traditions
+<ul>
+<li>tactile and aural traditions (e.g. Nemeth Braille / MathSpeak)</li>
+<li>many regional variations (cf. <a href="https://chezdom.net/mathematicalbraillecodes/">D. Archambault</a>)</li>
+<li>require human intervention</li>
+</ul>
+</li>
+<li>is incompatible with contemporary web accessibility
+<ul>
+<li>is layout, not semantics
+<ul>
+<li>so we fall back to print accessibility traditions</li>
+</ul>
+</li>
+<li>print accessibility traditions are also about layout
+<ul>
+<li>limited; modalities are incongruent</li>
+</ul>
+</li>
+<li>require heuristics for (non-visual) rendering</li>
+<li>incongruent to core concepts, e.g., <a href="https://w3c.github.io/accname/">Accessible Name Computation</a></li>
+</ul>
+</li>
+</ul>
+<my-notes hidden>
+<p>not accessible - cf. WCAG, accname</p>
+<p>Print equation layout has its own accessibility traditions (e.g. Nemeth Braille and MathSpeak) which create a set of orthogonal expectations that is difficult to address on the web.</p>
+<p>Print equation accessibility traditions (e.g., Nemeth Braille and MathSpeak) exacerbate the problem:</p>
+<p>On the one hand, these traditions reduce expectations to the limitations of print technology (e.g., semantics are largely out of scope) [cf svg house made of triangle, rectangle, circle]
+On the other hand, these traditions rely on human intervention (through narration or specialized Braille transcribers) which leads to them being underspecified and easily malleable by the assisting person.</p>
+</my-notes>
+</section>
+<section>
+<h2 id="what%E2%80%99s-the-problem-(3)" tabindex="-1"><a class="header-anchor" href="#what%E2%80%99s-the-problem-(3)">What’s the problem (3)</a></h2>
+<p>But what’s <em>really</em> the problem?</p>
+<p><strong>Heuristics</strong></p>
+<p>Imagine they fail you.</p>
+<ul>
+<li>a superscript 2 is voiced squared but isn’t</li>
+<li>your layout is interpreted as fraction but it’s not. [Legendre_symbol]</li>
+</ul>
+<blockquote>
+<p>Now you have 2 problems</p>
+</blockquote>
+<p>How do you fix that?</p>
+<my-notes hidden>
+* heuristics are strongly avoided in web a11y (except to fix broken things)
+* if you try to fix something, you now have to work around heuristics as well
+  * unspecified heuristics
+</my-notes>
+</section>
+<section id="restraints">
+<h2 id="part-1.-restraints" tabindex="-1"><a class="header-anchor" href="#part-1.-restraints">Part 1. Restraints</a></h2>
+</section>
+<section>
+<h2 id="on-principle" tabindex="-1"><a class="header-anchor" href="#on-principle">On principle</a></h2>
+<p>It’s print equation layout.</p>
+<p>Someone must apply heuristics.</p>
+<p>Who?</p>
+<blockquote>
+<p>Web standards principle: Users before authors, authors before vendors.</p>
+</blockquote>
+<p>Applying heuristics should be a burden on the <strong>author</strong> not the user.</p>
+<my-notes hidden>
+</my-notes>
+</section>
+<section>
+<h2 id="the-big-tools" tabindex="-1"><a class="header-anchor" href="#the-big-tools">The big tools</a></h2>
+<ul>
+<li><a href="https://www.mathjax.org/">MathJax</a> the leading visual rendering technology for print equation layout on the web</li>
+<li><a href="https://speechruleengine.org/">Speech Rule Engine</a> the leading non-visual rendering rendering technology for print equation layout on the web</li>
+</ul>
+<p>MathJax and Speech-Rule-Engine are the best available tools to render print equation layout visually and non-visually.</p>
+<p>However, JavaScript is not always available or a reasonable option (e.g., several thousand expression on a single page)</p>
+<my-notes hidden>
+</my-notes>
+</section>
+<section>
+<h2 id="the-tiny-tools" tabindex="-1"><a class="header-anchor" href="#the-tiny-tools">The tiny tools</a></h2>
+<ul>
+<li><a href="https://github.com/krautzource/aria-tree-walker">github.com/krautzource/aria-tree-walker</a>, a tiny JavaScript module to enable a basic exploration for (special) ARIA tree markup</li>
+<li><a href="https://github.com/krautzource/sre-to-tree">github.com/krautzource/sre-to-tree</a>, a small NodeJS module for post-processing (custom) MathJax+SRE output.</li>
+</ul>
+<p><strong>Caveat Emptor</strong> Think of these more as examples (<a href="https://notes.baldurbjarnason.com/2021/05/03/idle-thought-most.html">inspiration</a>). Don’t force your content to work with them – adjust them to work for your content.</p>
+<my-notes hidden>
+</my-notes>
+</section>
+<section>
+<h2 id="history-of-this-work" tabindex="-1"><a class="header-anchor" href="#history-of-this-work">History of this work</a></h2>
+<ul>
+<li>2018: AIM Workshop <a href="https://aimath.org/workshops/upcoming/webmath/"> Web accessibility of mathematics </a></li>
+<li>2019 &amp; 2020: Initial demo expanded as <a href="https://github.com/krautzource/mathjax-sre-walker/">mathjax-sre-walker</a>
+<ul>
+<li>moving “closer to the metal”</li>
+<li>evaluating different ARIA solutions for best results</li>
+<li><a href="https://github.com/zorkow/speech-rule-engine/">Speech-Rule-Engine</a> adds new APIs to expose its enrichment</li>
+<li><a href="https://www.mathjax.org/">MathJax</a> releases version 3 with necessary markup improvements</li>
+</ul>
+</li>
+<li>2020 - today: Continued as a general purpose <a href="https://github.com/krautzource/aria-tree-walker">ARIA Tree Walker</a></li>
+</ul>
+<my-notes hidden>
+</my-notes>
+</section>
+<section>
+<h2 id="what-if-the-big-tools-aren%E2%80%99t-around%3F" tabindex="-1"><a class="header-anchor" href="#what-if-the-big-tools-aren%E2%80%99t-around%3F">What if the big tools aren’t around?</a></h2>
+<p>MathJax’s integration of Speech Rule Engine brings the highest quality of visual and non-visual rendering with a trove of features and affordances.</p>
+<p>But JavaScript is not always an option - either due to availability or performance.</p>
+<my-notes hidden>
+</my-notes>
+</section>
+<section>
+<h2 id="original-design-ideas" tabindex="-1"><a class="header-anchor" href="#original-design-ideas">Original design ideas</a></h2>
+<ul>
+<li>
+<p>author responsibility through author ability</p>
+</li>
+<li>
+<p>an eye on moving standards</p>
+</li>
+<li>
+<p>server-side rendering both visually and non-visually</p>
+<ul>
+<li>limitation: no user-facing options</li>
+<li>no heuristics affecting users</li>
+<li>fixable heuristics</li>
+<li>fixable bugs</li>
+</ul>
+</li>
+<li>
+<p>progressive enhancement // good fallback behavior</p>
+<ul>
+<li>static accessible name; lengthy but there</li>
+</ul>
+</li>
+<li>
+<p>minimal performance impact</p>
+<ul>
+<li>DEMO long article</li>
+</ul>
+</li>
+<li>
+<p>simple author styling</p>
+</li>
+<li>
+<p>enable additional services</p>
+<ul>
+<li>DEMO: subtitles, speech synthesis</li>
+</ul>
+</li>
+<li>
+<p>standards-oriented</p>
+<ul>
+<li>start with existing standards</li>
+<li>inform standards development</li>
+<li>promote multi-purpose standards</li>
+<li>adjust to emerging improvements</li>
+<li>promote universally useful standards</li>
+</ul>
+</li>
+</ul>
+<my-notes hidden>
+</my-notes>
+</section>
+<section>
+<h2 id="demo-time" tabindex="-1"><a class="header-anchor" href="#demo-time">Demo time</a></h2>
+<ul>
+<li>NVDA + Chrome</li>
+<li>JAWS + Firefox</li>
+<li>MacOS VO + Chrome</li>
+<li>ORCA + FF + braille output</li>
+</ul>
+</section>
+<section>
+<h2 id="demo-time-2" tabindex="-1"><a class="header-anchor" href="#demo-time-2">Demo time 2</a></h2>
+<ul>
+<li>Thorium</li>
+<li>Apple Books</li>
+</ul>
+</section>
+<section>
+<h2 id="experimental-demo" tabindex="-1"><a class="header-anchor" href="#experimental-demo">Experimental demo</a></h2>
+<ul>
+<li>Talkback</li>
+<li>but VO not possible at this time</li>
+</ul>
 </section>
 </section>
 
