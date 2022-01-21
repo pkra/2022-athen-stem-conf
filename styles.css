@@ -168,14 +168,10 @@ blockquote {
 
 /* Slide effect, based on https://codepen.io/chriscoyier/pen/pMRgwW MIT licensed */
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   overflow-y: hidden;
-  font-size: calc(1rem + 0.5vw);
 }
+
 .slider {
   font-family: sans-serif;
   -ms-scroll-snap-type: x mandatory;
@@ -184,21 +180,14 @@ body {
   display: flex;
   overflow-x: scroll;
 }
-section {
+.slider section {
   min-width: 100vw;
   min-height: 100vh;
   scroll-snap-align: start;
   position: relative;
 }
-section > * {
+.slider section > * {
   margin: 1em auto;
   max-width: 80vw;
 }
-h1 {
-  text-align: right;
-  font-size: calc(1rem + 3vw);
-}
 
-strong {
-  font-weight: bold;
-}
