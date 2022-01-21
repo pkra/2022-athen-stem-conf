@@ -1,10 +1,10 @@
-const md = require('markdown-it')();
-md.use(require('markdown-it-attrs'), {
-  // optional, these are default options
-  leftDelimiter: '{',
-  rightDelimiter: '}',
-  allowedAttributes: []  // empty array = all attributes are allowed
+console.log(new Date());
+const md = require('markdown-it')({
+  html: true,
+  linkify: true,
+  typographer: true
 });
+md.use(require('markdown-it-attrs'));
 const anchor = require('markdown-it-anchor');
 md.use(require('markdown-it-header-sections'), {
   html: true,
