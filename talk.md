@@ -1,8 +1,10 @@
-# Providing robust, progressively enhanced, richly accessible print equation layout at scale on the web
+# Enhancing server-side MathJax rendering with common ARIA patterns to provide robust, richly accessible equation layout at scale
 
 *ATHEN STEM Accessibility Conference*
 
 By Peter Krautzberger, [krautzource](https://krautzource.com)
+
+Scroll left/right to move through slides. Click headings to anchor the slide. {style="margin-top: 10%; font-size: 0.8em"}
 
 
 Scroll left/right to move through slides. Click headings to anchor the slide. {style="margin-top:33vh; font-size: 0.8em"}
