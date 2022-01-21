@@ -163,7 +163,7 @@ h3 {
 
 blockquote {
   border-left: 8px solid lightblue;
-  padding: 1em;
+  padding-left: 1em;
 }
 
 /* Slide effect, based on https://codepen.io/chriscoyier/pen/pMRgwW MIT licensed */
