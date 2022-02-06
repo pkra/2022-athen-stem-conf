@@ -17,10 +17,146 @@ Scroll left/right to move through slides. Click headings to anchor the slide. {s
 
 * Former mathematician
 * Former Manager at the [MathJax](https://www.mathjax.org) Consortium
-* Independent developer and consultant, focus on STEM publishing conversion pipelines
-  * e.g., at [AMS](https://www.ams.org) ebook and [journals](https://www.ams.org/publications/journals/journalsframework/AMSMathViewer) HTML production
-* Invited Expert at W3C
-* co-editor of the ARIA Specification
+* [Independent developer and consultant](https://krautzource.com/)
+  focus on STEM publishing conversion pipelines
+* [Invited Expert at W3C](https://www.w3.org/participate/invited-experts/)
+  co-editor of [the ARIA Specification](https://w3c.github.io/aria/)
+
+## What's this about?
+
+Let's start with some demos.
+
+## What are we looking at?
+
+The [AMS](https://www.ams.org) ebook and [journals](https://www.ams.org/publications/journals/journalsframework/AMSMathViewer) HTML production.
+
+In particular: [Disproof of a conjecture by Rademacher on partial fractions](https://www.ams.org/journals/bproc/2014-01-11/S2330-1511-2014-00014-6/viewer/)
+## NVDA
+
+NVDA using Chrome
+
+<video controls style="width:auto; max-height:33vh">
+<source src="./nvda_bproc14_chrome.mp4" type="video/mp4">
+Sorry, your browser doesn't support embedded videos.
+</video>
+
+(Firefox and Edge work, too.)
+
+
+<my-notes hidden>
+* vanilla NVDA in Windows 10 VM
+* me following a typical screenreader navigation
+* jump by heading
+* then browse mode in section
+* some inline expressions are read along
+* then a block expression shows up (and NVDA focus bug)
+* we listen to it but it's long so we explore
+* exploration
+* moving back into browse mode for the next paragraph
+* for good measure, explore some inline content
+</my-notes>
+
+
+## JAWS
+
+JAWS using Chrome
+
+<video controls style="width:auto; max-height:33vh">
+<source src="./jaws_bproc14_chrome.mp4" type="video/mp4">
+Sorry, your browser doesn't support embedded videos.
+</video>
+
+Firefox and Edge work, too.
+
+## VoiceOver Mac OS
+
+VoiceOver using Safari 
+
+<video controls style="width:auto; max-height:33vh">
+<source src="./vo-bproc14-safari.mp4" type="video/mp4">
+Sorry, your browser doesn't support embedded videos.
+</video>
+
+Chrome works, too (better even).
+
+## Orca
+
+Orca using Firefox (with Braille monitor)
+
+<video controls style="width:auto; max-height:33vh">
+<source src="./orca_bproc14_firefox.mp4" type="video/mp4">
+Sorry, your browser doesn't support embedded videos.
+</video>
+
+Chrome works, too.
+
+## VoiceOver iOS
+
+Touch AT is tricky. But we at least get something:
+
+<video controls style="width:auto; max-height:33vh">
+<source src="./vo_bproc14_ios.mp4" type="video/mp4">
+Sorry, your browser doesn't support embedded videos.
+</video>
+
+## Talkback Android
+
+Touch AT is tricky. But we at least get something:
+
+<video controls style="width:auto; max-height:33vh">
+<source src="./talkback_bproc14_chrome.mp4" type="video/mp4">
+Sorry, your browser doesn't support embedded videos.
+</video>
+
+Firefox works, too.
+
+## NVDA in Thorium
+
+NVDA using Thorium
+
+<video controls style="width:auto; max-height:33vh">
+<source src="./thorium_bproc14_nvda.mp4" type="video/mp4">
+Sorry, your browser doesn't support embedded videos.
+</video>
+
+Note: needs extra key (e.g., <kbd>ctrl</kbd>) to prevent Thorium pagination.
+
+## Thorium read-aloud
+
+Thorium using its built-in read-aloud functionality.
+
+<video controls style="width:auto; max-height:33vh">
+<source src="./thorium_bproc14_readaloud.mp4" type="video/mp4">
+Sorry, your browser doesn't support embedded videos.
+</video>
+
+Firefox works, too.
+
+
+## What have we seen
+
+Print equation layout that 
+
+* voices everywhere & consistently
+  * both screenreaders and read-aloud
+* provides keyboard exploration
+  * following standard tree patterns
+* synchronous highlighting (both CSS and AT driven)
+* can provide simultaneous (alternative) braille
+
+## What? how? why?
+
+What? [AMS](https://www.ams.org) HTML production but MathJax content in general
+
+How? [github.com/krautzource/aria-tree-walker](https://github.com/krautzource/aria-tree-walker)
+
+Why? [Jakob's Law](https://lawsofux.com/jakobs-law/)
+
+> Users spend most of their time on other sites. This means that users prefer your site to work the same way as all the other sites they already know.
+
+## 2. "Print equation layout" {#printeq}
+
+## AMS = print
 
 ## "Print equation layout" - a framing device
 
@@ -107,9 +243,9 @@ Imagine they fail you.
 * a superscript 2 is voiced squared but isn't
 * your layout is interpreted as fraction but it's not. [Legendre_symbol]
 
-> Now you have 2 problems
-
 How do you fix that?
+
+> Now you have 2 problems
 
 <my-notes hidden>
 * heuristics are strongly avoided in web a11y (except to fix broken things)
@@ -117,7 +253,6 @@ How do you fix that?
   * unspecified heuristics
 </my-notes>
  
-## Part 1. Restraints {#restraints}
 ## On principle
 
 It's print equation layout.
@@ -136,25 +271,51 @@ Applying heuristics should be a burden on the **author** not the user.
 
 ## The big tools
 
-* [MathJax](https://www.mathjax.org/) the leading visual rendering technology for print equation layout on the web
-* [Speech Rule Engine](https://speechruleengine.org/) the leading non-visual rendering rendering technology for print equation layout on the web
+[MathJax](https://www.mathjax.org/) the leading visual rendering technology for print equation layout on the web
 
-MathJax and Speech-Rule-Engine are the best available tools to render print equation layout visually and non-visually.
 
-However, JavaScript is not always available or a reasonable option (e.g., several thousand expression on a single page)
+[Speech Rule Engine](https://speechruleengine.org/) the leading non-visual rendering technology for print equation layout
 
 <my-notes hidden>
 </my-notes>
 
-## The tiny tools
+## What if the big tools aren't around?
 
-* [github.com/krautzource/aria-tree-walker](https://github.com/krautzource/aria-tree-walker), a tiny JavaScript module to enable a basic exploration for (special) ARIA tree markup
-* [github.com/krautzource/sre-to-tree](https://github.com/krautzource/sre-to-tree), a small NodeJS module for post-processing (custom) MathJax+SRE output.
+MathJax's integration of Speech Rule Engine brings the highest quality of visual and non-visual rendering with a trove of features and affordances.
 
-**Caveat Emptor** Think of these more as examples ([inspiration](https://notes.baldurbjarnason.com/2021/05/03/idle-thought-most.html)). Don't force your content to work with them -- adjust them to work for your content.
+But JavaScript is not always an option - either due to availability or performance.
 
 <my-notes hidden>
 </my-notes>
+
+## Real life
+
+From [The Mobile Performance Inequality Gap, 2021](https://infrequently.org/2021/03/the-performance-inequality-gap/)
+
+> 2020’s high-end Androids sport the single-core performance of an iPhone 8, a phone released in Q3’17 <br>
+> Mid-priced Androids were slightly faster than 2014’s iPhone 6 <br>
+> Low-end Androids have finally caught up to the iPhone 5 from 2012
+
+## Real life at scale (1)
+
+An real life example of scale
+
+[Existence of minimal models for varieties of log general type, Birkar et al.](https://www.ams.org/journals/jams/2010-23-02/S0894-0347-09-00649-3/)
+
+* 64 pages (slighly above average)
+* ~5000 equations (in PDF)
+* ~6400 equations (in HTML)
+
+<my-notes hidden>
+jams649
+</my-notes>
+
+## Real life at scale (2)
+TODO 
+
+The AMS publishes roughly XXX pages across XXX journal articles and XXX Books each year.
+
+A solution must scale to process this not just once but on each iteration of the product.
 
 ## History of this work
 
@@ -169,25 +330,87 @@ However, JavaScript is not always available or a reasonable option (e.g., severa
 <my-notes hidden>
 </my-notes>
 
-## What if the big tools aren't around?
+## SSR to the rescue
 
-MathJax's integration of Speech Rule Engine brings the highest quality of visual and non-visual rendering with a trove of features and affordances.
+Server Side Rendering allows for performant pages at this scale.
 
-But JavaScript is not always an option - either due to availability or performance.
+[MathJax demos for NodeJS](https://github.com/mathjax/MathJax-demos-node/) offers a range of example code snippets, even for [speech output](https://github.com/mathjax/MathJax-demos-node/tree/master/speech).
+
+☑ performance at scale <br>
+☑ heuristics "move left"
+
+But: how do we get MathJax+SRE client-side accessibility benefits?
+## ARIA to the rescue
+
+[The ARIA specification](https://w3c.github.io/aria/) offers many patterns for complex interation beyond the scope of HTML.
+
+Most interaction patterns are derived from OS-level widgets and application interface to follow [Jakob's Law](https://lawsofux.com/jakobs-law/).
+
+Which one do we choose?
+
+## A look inside Speech Rule Engine
+
+Speech Rule Engine offers a visualizer to inspect its heuristic analysis, creating its "semantic tree".
+
+[A simple example](https://speech-rule-engine.github.io/semantic-tree-visualiser/visualise.html?110001111100f%3A%20X%20%5Cto%20Y%2C%20x%20%5Cmapsto%20%5Csin%28x%29)
+
+<img alt="screenshot from the above webpage, showing various UI options and the resulting semantic tree for a simple function declaration for sine of x" src="Semantic_Tree_Visualisation.png" style="height: 50vh">
+
+## ARIA tree pattern
+
+[ARIA's tree role](https://w3c.github.io/aria/#tree)
+
+> A widget that allows the user to select one or more items from a hierarchically organized collection.
+
+[ARIA Authoring Practices Tree Pattern](https://w3c.github.io/aria-practices/#TreeView)
+
+> A tree view widget presents a hierarchical list. Any item in the hierarchy may have child items, and items that have children may be expanded or collapsed to show or hide the children. 
+
+## AT affordances for ARIA trees
+
+* good browse mode support
+* enter + esc for quickly switching in and out of focus mode
+* customizable level information (level, setsize, posinset)
+* easy future enhancements (e.g., braille labels)
+
+## The tiny tools
+
+* In MathJax SSR setup, configure SRE to add structural markup
+* [github.com/krautzource/sre-to-tree](https://github.com/krautzource/sre-to-tree), a small NodeJS module for post-processing MathJax+SRE output into ARIA tree markup.
+* [github.com/krautzource/aria-tree-walker](https://github.com/krautzource/aria-tree-walker), a tiny JavaScript module to enable a basic exploration for this kind of ARIA tree markup
+
+**Caveat Emptor** Think of these more as examples ([inspiration](https://notes.baldurbjarnason.com/2021/05/03/idle-thought-most.html)). Don't force your content to work with them -- adjust them to work for your content.
 
 <my-notes hidden>
 </my-notes>
+
+## User testing 
+TODO
+Some quotes from users:
+
+....
+
+## Quirks, bugs and future improvements
+
+* inline trees are iffy
+* VoiceOver is iffy
+* touch support is very hard
+* better noops
+* better 
+
+## To infinity and beyond
+
+TODO tree walker for more than equations
 
 ## Original design ideas
 
 * author responsibility through author ability
 * an eye on moving standards
-
 * server-side rendering both visually and non-visually
   * limitation: no user-facing options
   * no heuristics affecting users
-  * fixable heuristics
-  * fixable bugs
+  * **fixable** heuristics
+  * **fixable** bugs
 * progressive enhancement // good fallback behavior
   * static accessible name; lengthy but there
 * minimal performance impact
@@ -205,19 +428,16 @@ But JavaScript is not always an option - either due to availability or performan
 <my-notes hidden>
 </my-notes>
 
-## Demo time
+## Why
 
-* NVDA + Chrome
-* JAWS + Firefox
-* MacOS VO + Chrome 
-* ORCA + FF + braille output
-
-## Demo time 2
-
-* Thorium
-* Apple Books
-
-## Experimental demo
-
-* Talkback
-* but VO not possible at this time
+* print equation layout
+* MathML is not usable
+  * support is poor and inconsistent
+    * browsers
+    * AT
+      * VO, JAWS support limited
+      * read-aloud no support
+      * liblouis poor and now unmaintained Nemeth output
+  * MathML is a flawed technology
+* 
+* 
