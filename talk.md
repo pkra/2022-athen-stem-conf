@@ -342,7 +342,7 @@ how flexible this can be.
 
 > I feel like this simple arrow-key-driven, branching and hierarchical approach can be
 useful in a lot of situations. I see it as particularly useful in mathematical, chemical,
-Christological, and similar fine-scale representations, as well as mapping.
+[...], and similar fine-scale representations, as well as mapping.
 
 > I would have to use the product more extensively in a production environment. But it’s the best I’ve seen thus far for making
 STEM material comprehensible with screen reading technology.
