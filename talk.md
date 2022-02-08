@@ -1,6 +1,6 @@
 # Enhancing server-side MathJax rendering with common ARIA patterns to provide robust, richly accessible equation layout at scale
 
-*ATHEN STEM Accessibility Conference*
+*[ATHEN](https://athenpro.org) STEM Accessibility Conference 2022*
 
 By Peter Krautzberger, [krautzource](https://krautzource.com)
 
