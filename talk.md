@@ -6,34 +6,27 @@ By Peter Krautzberger, [krautzource](https://krautzource.com)
 
 Scroll left/right to move through slides. Click headings to anchor the slide. {style="margin-top: 10%; font-size: 0.8em"}
 
-## Overview
+## Hi!
 
-1. [Introduction](#introduction)
-2. [Restraints](#restraints)
-
-## 1. Introduction {#introduction}
-
-## Hi
-
-* Former mathematician
-* Former Manager at the [MathJax](https://www.mathjax.org) Consortium
+* Former [mathematician](https://genealogy.math.ndsu.nodak.edu/id.php?id=140155)
+* Former Manager at [the MathJax Consortium](https://www.mathjax.org)
 * [Independent developer and consultant](https://krautzource.com/)
   focus on STEM publishing conversion pipelines
-* [Invited Expert at W3C](https://www.w3.org/participate/invited-experts/)
+* [Invited Expert at W3C](https://www.w3.org/participate/invited-experts/), 
   co-editor of [the ARIA Specification](https://w3c.github.io/aria/)
 
-## What's this about?
+## Let's jump right in
 
-Let's start with some demos.
+Demo time!
 
 ## What are we looking at?
 
-The [AMS](https://www.ams.org) ebook and [journals](https://www.ams.org/publications/journals/journalsframework/AMSMathViewer) HTML production.
+HTML production at the [American Mathematical Society](https://www.ams.org) includes ebooks and [journals](https://www.ams.org/publications/journals/journalsframework/AMSMathViewer).
 
-In particular: [Disproof of a conjecture by Rademacher on partial fractions](https://www.ams.org/journals/bproc/2014-01-11/S2330-1511-2014-00014-6/viewer/)
+The demos use a journal article, [Disproof of a conjecture by Rademacher on partial fractions](https://www.ams.org/journals/bproc/2014-01-11/S2330-1511-2014-00014-6/viewer/)
 ## NVDA
 
-NVDA using Chrome
+[NVDA](https://www.nvaccess.org/) using Chrome
 
 <video controls style="width:auto; max-height:33vh">
 <source src="./nvda_bproc14_chrome.mp4" type="video/mp4">
@@ -44,6 +37,8 @@ Sorry, your browser doesn't support embedded videos.
 
 
 <my-notes hidden>
+* just hear it out
+
 * vanilla NVDA in Windows 10 VM
 * me following a typical screenreader navigation
 * jump by heading
@@ -59,7 +54,7 @@ Sorry, your browser doesn't support embedded videos.
 
 ## JAWS
 
-JAWS using Chrome
+[JAWS](https://www.freedomscientific.com/products/software/jaws/) using Chrome
 
 <video controls style="width:auto; max-height:33vh">
 <source src="./jaws_bproc14_chrome.mp4" type="video/mp4">
@@ -68,9 +63,9 @@ Sorry, your browser doesn't support embedded videos.
 
 Firefox and Edge work, too.
 
-## VoiceOver Mac OS
+## VoiceOver (Mac OS)
 
-VoiceOver using Safari 
+[VoiceOver](https://support.apple.com/accessibility) using Safari 
 
 <video controls style="width:auto; max-height:33vh">
 <source src="./vo-bproc14-safari.mp4" type="video/mp4">
@@ -81,7 +76,7 @@ Chrome works, too (better even).
 
 ## Orca
 
-Orca using Firefox (with Braille monitor)
+[Orca](https://help.gnome.org/users/orca/stable/) using Firefox
 
 <video controls style="width:auto; max-height:33vh">
 <source src="./orca_bproc14_firefox.mp4" type="video/mp4">
@@ -90,182 +85,82 @@ Sorry, your browser doesn't support embedded videos.
 
 Chrome works, too.
 
-## VoiceOver iOS
+## VoiceOver (iOS)
 
-Touch AT is tricky. But we at least get something:
+Touch AT is tricky. But we should at least get something:
 
 <video controls style="width:auto; max-height:33vh">
-<source src="./vo_bproc14_ios.mp4" type="video/mp4">
+<source src="./ios-bproc14-bug.mp4" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
 
-## Talkback Android
+Oops. [It's a regression](https://bugs.webkit.org/show_bug.cgi?id=236291).
 
-Touch AT is tricky. But we at least get something:
+## Talkback (Android)
+
+[Talkback](https://support.google.com/accessibility/android/topic/3529932?hl=en&ref_topic=9078845) is better:
 
 <video controls style="width:auto; max-height:33vh">
 <source src="./talkback_bproc14_chrome.mp4" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
 
-Firefox works, too.
+(Firefox for Android works, too.)
 
 ## NVDA in Thorium
 
-NVDA using Thorium
+NVDA using the epub reader [Thorium](https://www.edrlab.org/software/thorium-reader/)
 
 <video controls style="width:auto; max-height:33vh">
 <source src="./thorium_bproc14_nvda.mp4" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
 
-Note: needs extra key (e.g., <kbd>ctrl</kbd>) to prevent Thorium pagination.
+Disclosure: needs extra key during exploration (e.g., <kbd>ctrl</kbd>) to prevent Thorium pagination.
 
 ## Thorium read-aloud
 
-Thorium using its built-in read-aloud functionality.
+[Thorium](https://www.edrlab.org/software/thorium-reader/) using its built-in read-aloud functionality.
 
 <video controls style="width:auto; max-height:33vh">
 <source src="./thorium_bproc14_readaloud.mp4" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
 
-Firefox works, too.
+## And on its own
 
+* visit [the article's settings panel](https://www.ams.org/journals/bproc/2014-01-11/S2330-1511-2014-00014-6/viewer/#settings)
+* activate subtitles or speech synthesis
+* focus an equation (e.g., click on or tab to it)
+* explore!
 
-## What have we seen
+## Demo Recap
 
-Print equation layout that 
+The demos show print equation layout that 
 
 * voices everywhere & consistently
   * both screenreaders and read-aloud
+  * both web and epub
 * provides keyboard exploration
   * following standard tree patterns
 * synchronous highlighting (both CSS and AT driven)
 * can provide simultaneous (alternative) braille
+* can be extended (e.g., self-voicing, subtitling)
 
-## What? how? why?
+## a personal observation
 
-What? [AMS](https://www.ams.org) HTML production but MathJax content in general
+Equation layout is really a bit problematic.
 
-How? [github.com/krautzource/aria-tree-walker](https://github.com/krautzource/aria-tree-walker)
-
-Why? [Jakob's Law](https://lawsofux.com/jakobs-law/)
-
-> Users spend most of their time on other sites. This means that users prefer your site to work the same way as all the other sites they already know.
-
-## 2. "Print equation layout" {#printeq}
-
-## AMS = print
-
-## "Print equation layout" - a framing device
-
-[From Wikipedia](https://en.wikipedia.org/wiki/Framing_(social_sciences)):
-
-> [...] framing comprises a set of concepts and theoretical perspectives on how individuals, groups, and societies organize, perceive, and communicate about reality. 
-
-Examples of "print equation layout":
-
-* math mode TeX/LaTeX
-* asciimath, groff/eqn
-* MathML, OMML
-* Mathematica traditionalForm, Maple 1-D/2-D Math
-
-("Typical output" - you can frequently draw anything with these notations.)
+* Limited to print traditions (and limitations)
+* Its accessibility traditions are based in print and focused layout
+  * and require extensive heuristics
+* Web accessibility resolves around semantics not layout
+  * clashes with user needs (e.g., copy&paste layout)
+  * also: [WCAG 1.1.1](https://w3c.github.io/wcag/21/guidelines/#non-text-content) applies
 
 <my-notes hidden>
 
-What I call "print equation layout" most people just call "math layout", "formula layout", or just "math" (that last one is somewhat insulting, speaking as a former mathematician). 
-
-This may seem unnnecessary and convoluted. To some degree, I agree. 
-
-For example, I personally don't believe we have seen "web equation layout" come into existence during these first 30 years of the web.
-
-But as a framing device it serves to ground the conversation and keep aspects in focus that I find critical to the discussion. 
-</my-notes>
-
-## What's the problem (1)
-
-Print equation layout is ... 
-
-* an elaborate, two-dimensional form of abbreviated notation for highly complex, context dependent abstract thought.
-  * even at an elementary level (e.g., long division).
-* highly ambiguous (examples: [whystartat.xyz](https://whystartat.xyz/wiki/Category:Ambiguities))
-* often integrated into additional complex notation (e.g., text annotation, graphical documents).
-* "non-text content" (so [WCAG 1.1.1](https://w3c.github.io/wcag/21/guidelines/#non-text-content) applies).
-
-<my-notes hidden>
-* 2d abbreviation: just because it uses text glyphs does not make it text (cf. ascii art).
-* non-text: 
-  * TeX text vs math mode, or "formula blocks" in MS Word et al).
-* e.g., spacing used to infer semantics
-* e.g., invisible/implied characters
-</my-notes>
-
-## What's the problem (2)
-
-Print equation layout ... 
-
-* has (print) accessibility traditions 
-  * tactile and aural traditions (e.g. Nemeth Braille / MathSpeak)
-  * many regional variations (cf. [D. Archambault](https://chezdom.net/mathematicalbraillecodes/))
-  * require human intervention
-* is incompatible with contemporary web accessibility
-  * is layout, not semantics
-    * so we fall back to print accessibility traditions
-  * print accessibility traditions are also about layout
-    * limited; modalities are incongruent
-  * require heuristics for (non-visual) rendering
-  * incongruent to core concepts, e.g., [Accessible Name Computation](https://w3c.github.io/accname/)
-
-<my-notes hidden>
-
-not accessible - cf. WCAG, accname
-
-
-Print equation layout has its own accessibility traditions (e.g. Nemeth Braille and MathSpeak) which create a set of orthogonal expectations that is difficult to address on the web.
-
-Print equation accessibility traditions (e.g., Nemeth Braille and MathSpeak) exacerbate the problem:
-
-On the one hand, these traditions reduce expectations to the limitations of print technology (e.g., semantics are largely out of scope) [cf svg house made of triangle, rectangle, circle]
-On the other hand, these traditions rely on human intervention (through narration or specialized Braille transcribers) which leads to them being underspecified and easily malleable by the assisting person.
-
-</my-notes>
-
-## What's the problem (3)
-
-But what's _really_ the problem?
-
-**Heuristics**
-
-Imagine they fail you. 
-
-* a superscript 2 is voiced squared but isn't
-* your layout is interpreted as fraction but it's not. [Legendre_symbol]
-
-How do you fix that?
-
-> Now you have 2 problems
-
-<my-notes hidden>
-* heuristics are strongly avoided in web a11y (except to fix broken things)
-* if you try to fix something, you now have to work around heuristics as well
-  * unspecified heuristics
-</my-notes>
- 
-## On principle
-
-It's print equation layout.
-
-Someone must apply heuristics.
-
-Who?
-
-> Web standards principle: Users before authors, authors before vendors.
-
-Applying heuristics should be a burden on the **author** not the user.
-
-<my-notes hidden>
+Don't forget heuristics and incongruencies (e.g., SRE's cycle heuristics)
 
 </my-notes>
 
@@ -273,11 +168,9 @@ Applying heuristics should be a burden on the **author** not the user.
 
 [MathJax](https://www.mathjax.org/) the leading visual rendering technology for print equation layout on the web
 
-
 [Speech Rule Engine](https://speechruleengine.org/) the leading non-visual rendering technology for print equation layout
 
-<my-notes hidden>
-</my-notes>
+For web content, you can do no better than use these.
 
 ## What if the big tools aren't around?
 
@@ -290,7 +183,7 @@ But JavaScript is not always an option - either due to availability or performan
 
 ## Real life
 
-From [The Mobile Performance Inequality Gap, 2021](https://infrequently.org/2021/03/the-performance-inequality-gap/)
+From [The Mobile Performance Inequality Gap, 2021](https://infrequently.org/2021/03/the-performance-inequality-gap/) (Alex Russel)
 
 > 2020’s high-end Androids sport the single-core performance of an iPhone 8, a phone released in Q3’17 <br>
 > Mid-priced Androids were slightly faster than 2014’s iPhone 6 <br>
@@ -298,7 +191,7 @@ From [The Mobile Performance Inequality Gap, 2021](https://infrequently.org/2021
 
 ## Real life at scale (1)
 
-An real life example of scale
+An real life example of scale at the AMS:
 
 [Existence of minimal models for varieties of log general type, Birkar et al.](https://www.ams.org/journals/jams/2010-23-02/S0894-0347-09-00649-3/)
 
@@ -311,18 +204,53 @@ jams649
 </my-notes>
 
 ## Real life at scale (2)
-TODO 
 
-The AMS publishes roughly XXX pages across XXX journal articles and XXX Books each year.
+The AMS publishes roughly 45,000 pages across over 1,000 journal articles and nearly 100 books each year.
 
-A solution must scale to process this not just once but on each iteration of the product.
+A solution must scale to process these not just once but on multiple iterations of web products per year.
 
-## History of this work
+## Real life at scale (3)
+
+The AMS publishes research-level mathematics.
+
+Bleeding-edge research means bleeding-edge notation, i.e., equation layout.
+
+## Design considerations
+
+
+Author responsibility through author ability ("users before authors before vendors")
+
+* no heuristics affecting users
+  * heuristics should be a burden on authors
+* **fixable** heuristics (& fixable bugs)
+* enable author customizations
+* enabling additional services (e.g., subtitles, speech synthesis)
+* minimal performance impact (even for longest articles)
+* web standards focus (present and future)
+* reliable user experience (e.g., [Jakob's Law](https://lawsofux.com/jakobs-law/))
+* [progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement) // [graceful degradation](https://en.wikipedia.org/wiki/Fault_tolerance)
+
+<my-notes hidden>
+* SRE allows overrides
+* promote multi-purpose standards
+</my-notes>
+
+## Example "fixable"
+
+Remember VoiceOver (iOS)? Here it is again, with a quick workaround:
+
+<video controls style="width:auto; max-height:33vh">
+<source src="./ios-bproc14-fix.mp4" type="video/mp4">
+Sorry, your browser doesn't support embedded videos.
+</video>
+
+(A 1 line fix, targeting only iOS/iPadOS.)
+## Quick History
 
 * 2018: AIM Workshop [ Web accessibility of mathematics ](https://aimath.org/workshops/upcoming/webmath/)
 * 2019 & 2020: Initial demo expanded as [mathjax-sre-walker](https://github.com/krautzource/mathjax-sre-walker/)
   * moving "closer to the metal"
-  * evaluating different ARIA solutions for best results
+  * evaluating different [ARIA](https://w3c.github.io/aria/) patterns for best results
   * [Speech-Rule-Engine](https://github.com/zorkow/speech-rule-engine/) adds new APIs to expose its enrichment
   * [MathJax](https://www.mathjax.org/) releases version 3 with necessary markup improvements
 * 2020 - today: Continued as a general purpose [ARIA Tree Walker](https://github.com/krautzource/aria-tree-walker)
@@ -340,6 +268,12 @@ Server Side Rendering allows for performant pages at this scale.
 ☑ heuristics "move left"
 
 But: how do we get MathJax+SRE client-side accessibility benefits?
+
+<my-notes hidden>
+* SSR robustness and stability -- MathJax changes its output but SSR output will not
+</my-notes>
+
+
 ## ARIA to the rescue
 
 [The ARIA specification](https://w3c.github.io/aria/) offers many patterns for complex interation beyond the scope of HTML.
@@ -355,6 +289,8 @@ Speech Rule Engine offers a visualizer to inspect its heuristic analysis, creati
 [A simple example](https://speech-rule-engine.github.io/semantic-tree-visualiser/visualise.html?110001111100f%3A%20X%20%5Cto%20Y%2C%20x%20%5Cmapsto%20%5Csin%28x%29)
 
 <img alt="screenshot from the above webpage, showing various UI options and the resulting semantic tree for a simple function declaration for sine of x" src="Semantic_Tree_Visualisation.png" style="height: 50vh">
+
+Also, the [DOM](https://en.wikipedia.org/wiki/Document_Object_Model) is a tree.
 
 ## ARIA tree pattern
 
@@ -375,69 +311,61 @@ Speech Rule Engine offers a visualizer to inspect its heuristic analysis, creati
 
 ## The tiny tools
 
-* In MathJax SSR setup, configure SRE to add structural markup
-* [github.com/krautzource/sre-to-tree](https://github.com/krautzource/sre-to-tree), a small NodeJS module for post-processing MathJax+SRE output into ARIA tree markup.
-* [github.com/krautzource/aria-tree-walker](https://github.com/krautzource/aria-tree-walker), a tiny JavaScript module to enable a basic exploration for this kind of ARIA tree markup
+* In MathJax *SSR* setup, configure SRE to add structural markup
+* *SSR* post-process: [github.com/krautzource/sre-to-tree](https://github.com/krautzource/sre-to-tree), a small NodeJS module for post-processing MathJax+SRE output into ARIA tree markup.
+* *Client-side*: [github.com/krautzource/aria-tree-walker](https://github.com/krautzource/aria-tree-walker), a tiny JavaScript module to enable a basic exploration for this kind of ARIA tree markup
 
-**Caveat Emptor** Think of these more as examples ([inspiration](https://notes.baldurbjarnason.com/2021/05/03/idle-thought-most.html)). Don't force your content to work with them -- adjust them to work for your content.
+**Caveat Emptor** Think of these more as [educational resources](https://notes.baldurbjarnason.com/2021/05/03/idle-thought-most.html). Don't force your content to work with them -- adjust them to work for your content.
 
 <my-notes hidden>
 </my-notes>
 
-## User testing 
-TODO
-Some quotes from users:
 
-....
+## Beyond print equation layout
+
+Trees are fairly generic so [aria-tree-walker's documentation](https://krautzource.github.io/aria-tree-walker/) offers several other examples
+
+* line art
+* chemical diagrams
+* d3.js-driven diagrams
+* musical score
+* tikz diagrams
+
+
+## User testing 
+
+Is it any good? Some quotes from testers at Portland Community College:
+
+> I think this is a much better solution to the extension for NVDA as you can get very very
+granular. I really really like this approach. I will be testing using other SVG vector images to see
+how flexible this can be.
+
+> I feel like this simple arrow-key-driven, branching and hierarchical approach can be
+useful in a lot of situations. I see it as particularly useful in mathematical, chemical,
+Christological, and similar fine-scale representations, as well as mapping.
+
+> I would have to use the product more extensively in a production environment. But it’s the best I’ve seen thus far for making
+STEM material comprehensible with screen reading technology.
+
+Thanks to [Alex Jordan](https://www.linkedin.com/in/alex-jordan-12122a161/) from PCC (and [PreTeXt](https://pretextbook.org/)) as well as the team at PCC's Accessibility Office.
 
 ## Quirks, bugs and future improvements
+
+Is this perfect? Of course not.
 
 * inline trees are iffy
 * VoiceOver is iffy
 * touch support is very hard
-* better noops
-* better 
+* better noOps
+* lots to "steal" from client-side MathJax+SRE
 
-## To infinity and beyond
+## Wrapping up
 
-TODO tree walker for more than equations
+The approach gives us
 
-## Original design ideas
+* robust server-side rendering with great progressive enhancement
+* flexible and extensible patterns to improve upon
+* well-tested ARIA patterns
+* can be enhanced (e.g. CSS based highlighting, subtitles, speech synthesis)
+## Thank you!
 
-* author responsibility through author ability
-* an eye on moving standards
-* server-side rendering both visually and non-visually
-  * limitation: no user-facing options
-  * no heuristics affecting users
-  * **fixable** heuristics
-  * **fixable** bugs
-* progressive enhancement // good fallback behavior
-  * static accessible name; lengthy but there
-* minimal performance impact
-  * DEMO long article
-* simple author styling
-* enable additional services
-  * DEMO: subtitles, speech synthesis
-* standards-oriented
-  * start with existing standards
-  * inform standards development
-  * promote multi-purpose standards
-  * adjust to emerging improvements
-  * promote universally useful standards
-
-<my-notes hidden>
-</my-notes>
-
-## Why
-
-* print equation layout
-* MathML is not usable
-  * support is poor and inconsistent
-    * browsers
-    * AT
-      * VO, JAWS support limited
-      * read-aloud no support
-      * liblouis poor and now unmaintained Nemeth output
-  * MathML is a flawed technology
-* 
-* 
