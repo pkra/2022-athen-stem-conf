@@ -193,3 +193,11 @@ body {
   max-width: 80vw;
 }
 
+
+video {
+  width:auto; max-height:33vh
+}
+
+video:focus {
+  max-height: 60vh;
+}

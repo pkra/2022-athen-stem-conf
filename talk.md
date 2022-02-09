@@ -28,7 +28,7 @@ The demos use a journal article, [Disproof of a conjecture by Rademacher on part
 
 [NVDA](https://www.nvaccess.org/) using Chrome
 
-<video controls style="width:auto; max-height:33vh">
+<video controls>
 <source src="./nvda_bproc14_chrome.mp4" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
@@ -56,7 +56,7 @@ Sorry, your browser doesn't support embedded videos.
 
 [JAWS](https://www.freedomscientific.com/products/software/jaws/) using Chrome
 
-<video controls style="width:auto; max-height:33vh">
+<video controls>
 <source src="./jaws_bproc14_chrome.mp4" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
@@ -67,7 +67,7 @@ Firefox and Edge work, too.
 
 [VoiceOver](https://support.apple.com/accessibility) using Safari 
 
-<video controls style="width:auto; max-height:33vh">
+<video controls>
 <source src="./vo-bproc14-safari.mp4" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
@@ -78,7 +78,7 @@ Chrome works, too (better even).
 
 [Orca](https://help.gnome.org/users/orca/stable/) using Firefox
 
-<video controls style="width:auto; max-height:33vh">
+<video controls>
 <source src="./orca_bproc14_firefox.mp4" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
@@ -89,7 +89,7 @@ Chrome works, too.
 
 Touch AT is tricky. But we should at least get something:
 
-<video controls style="width:auto; max-height:33vh">
+<video controls>
 <source src="./ios-bproc14-bug.mp4" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
@@ -100,7 +100,7 @@ Oops. [It's a regression](https://bugs.webkit.org/show_bug.cgi?id=236291).
 
 [Talkback](https://support.google.com/accessibility/android/topic/3529932?hl=en&ref_topic=9078845) is better:
 
-<video controls style="width:auto; max-height:33vh">
+<video controls>
 <source src="./talkback_bproc14_chrome.mp4" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
@@ -111,7 +111,7 @@ Sorry, your browser doesn't support embedded videos.
 
 NVDA using the epub reader [Thorium](https://www.edrlab.org/software/thorium-reader/)
 
-<video controls style="width:auto; max-height:33vh">
+<video controls>
 <source src="./thorium_bproc14_nvda.mp4" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
@@ -122,7 +122,7 @@ Disclosure: needs extra key during exploration (e.g., <kbd>ctrl</kbd>) to preven
 
 [Thorium](https://www.edrlab.org/software/thorium-reader/) using its built-in read-aloud functionality.
 
-<video controls style="width:auto; max-height:33vh">
+<video controls>
 <source src="./thorium_bproc14_readaloud.mp4" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
@@ -239,7 +239,7 @@ Author responsibility through author ability ("users before authors before vendo
 
 Remember VoiceOver (iOS)? Here it is again, with a quick workaround:
 
-<video controls style="width:auto; max-height:33vh">
+<video controls>
 <source src="./ios-bproc14-fix.mp4" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
