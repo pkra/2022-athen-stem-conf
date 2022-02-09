@@ -154,7 +154,7 @@ Equation layout is really a bit problematic.
 * Limited to print traditions (and limitations)
 * Its accessibility traditions are based in print and focused layout
   * and require extensive heuristics
-* Web accessibility resolves around semantics not layout
+* Web accessibility revolves around semantics not layout
   * clashes with user needs (e.g., copy&paste layout)
   * also: [WCAG 1.1.1](https://w3c.github.io/wcag/21/guidelines/#non-text-content) applies
 
