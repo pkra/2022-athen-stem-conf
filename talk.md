@@ -85,20 +85,12 @@ Sorry, your browser doesn't support embedded videos.
 
 Chrome works, too.
 
-## VoiceOver (iOS)
-
-Touch AT is tricky. But we should at least get something:
-
-<video controls>
-<source src="./ios-bproc14-bug.mp4" type="video/mp4">
-Sorry, your browser doesn't support embedded videos.
-</video>
-
-Oops. [It's a regression](https://bugs.webkit.org/show_bug.cgi?id=236291).
-
 ## Talkback (Android)
 
-[Talkback](https://support.google.com/accessibility/android/topic/3529932?hl=en&ref_topic=9078845) is better:
+Touch AT is tricky. But we should at least get something. 
+
+Here's [Talkback](https://support.google.com/accessibility/android/topic/3529932?hl=en&ref_topic=9078845):
+
 
 <video controls>
 <source src="./talkback_bproc14_chrome.mp4" type="video/mp4">
@@ -106,6 +98,17 @@ Sorry, your browser doesn't support embedded videos.
 </video>
 
 (Firefox for Android works, too.)
+
+## VoiceOver (iOS)
+
+Voiceover on iOS should get the same:
+
+<video controls>
+<source src="./ios-bproc14-bug.mp4" type="video/mp4">
+Sorry, your browser doesn't support embedded videos.
+</video>
+
+**Oops.** [It's a regression](https://bugs.webkit.org/show_bug.cgi?id=236291).
 
 ## NVDA in Thorium
 
